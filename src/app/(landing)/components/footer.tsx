@@ -55,7 +55,7 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="mt-12 py-8 border-t text-center">
-                    <p className="text-muted-foreground">© 2023 GeoThai. All rights reserved.</p>
+                    <p className="text-muted-foreground">© {new Date().getFullYear()} GeoThai. All rights reserved.</p>
                 </div>
             </div>
         </footer>
