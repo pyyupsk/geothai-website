@@ -23,9 +23,9 @@ export default function Page() {
                             <span>
                                 <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
                             </span>
-                            <span className="backdrop absolute inset-[1px] rounded-full bg-primary-foreground/70 transition-colors duration-200 group-hover:bg-primary-foreground" />
-                            <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary-foreground/40"></span>
-                            <span className="z-10 py-0.5 text-sm text-foreground flex items-center justify-center gap-1.5">
+                            <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
+                            <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/40"></span>
+                            <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1.5">
                                 <Sparkles className="w-4 h-4" />
                                 Introducing GeoThai API
                                 <ChevronRight className="w-4 h-4" />
