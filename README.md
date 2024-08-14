@@ -1,36 +1,231 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GeoThai Website
 
-## Getting Started
+Welcome to the **GeoThai Website**! 🌏✨ This site serves as the central hub for accessing geographic data and resources related to Thailand. It includes a RESTful API, design assets, and documentation for our various packages.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   **RESTful API**: Retrieve detailed geographic data of provinces, districts, and subdistricts in Thailand.
+-   **Design Assets**: Access logos, icons, favicons, and other design resources.
+-   **Documentation**: Explore API documentation and guides for additional packages.
+
+## 🌐 RESTful API
+
+The GeoThai RESTful API provides endpoints to access comprehensive geographic data:
+
+-   **Provinces**: Retrieve information about Thai provinces.
+-   **Districts**: Get details on districts within each province.
+-   **Subdistricts**: Access data on subdistricts within each district.
+
+### Base URL
+
+```
+https://geothai.vercel.app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 1. **Retrieve All Provinces**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   **Endpoint**: `GET /api/provinces`
+-   **Description**: Retrieves a list of all provinces.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "province_name_en": "Bangkok",
+        "province_name_th": "กรุงเทพมหานคร"
+      },
+      ...
+    ]
+    ```
 
-## Learn More
+#### 2. **Retrieve Province by ID**
 
-To learn more about Next.js, take a look at the following resources:
+-   **Endpoint**: `GET /api/provinces/{provinceId}`
+-   **Description**: Retrieves a single province by its ID.
+-   **Parameters**:
+    -   `provinceId`: The ID of the province to retrieve.
+-   **Response**:
+    ```json
+    {
+        "id": 1,
+        "province_id": 1,
+        "province_name_en": "Bangkok",
+        "province_name_th": "กรุงเทพมหานคร"
+    }
+    ```
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 3. **Retrieve All Districts**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   **Endpoint**: `GET /api/districts`
+-   **Description**: Retrieves a list of all districts.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "district_name_en": "Pathum Wan",
+        "district_name_th": "ปทุมวัน",
+        "postal_code": 10330
+      },
+      ...
+    ]
+    ```
 
-## Deploy on Vercel
+#### 4. **Retrieve District by ID**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   **Endpoint**: `GET /api/districts/{districtId}`
+-   **Description**: Retrieves a single district by its ID.
+-   **Parameters**:
+    -   `districtId`: The ID of the district to retrieve.
+-   **Response**:
+    ```json
+    {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "district_name_en": "Pathum Wan",
+        "district_name_th": "ปทุมวัน",
+        "postal_code": 10330
+    }
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 5. **Retrieve All Subdistricts**
+
+-   **Endpoint**: `GET /api/subdistricts`
+-   **Description**: Retrieves a list of all subdistricts.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "subdistrict_id": 1,
+        "subdistrict_name_en": "Ratchaprasong",
+        "subdistrict_name_th": "ราชประสงค์",
+        "postal_code": 10330
+      },
+      ...
+    ]
+    ```
+
+#### 6. **Retrieve Subdistrict by ID**
+
+-   **Endpoint**: `GET /api/subdistricts/{subdistrictId}`
+-   **Description**: Retrieves a single subdistrict by its ID.
+-   **Parameters**:
+    -   `subdistrictId`: The ID of the subdistrict to retrieve.
+-   **Response**:
+    ```json
+    {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "subdistrict_id": 1,
+        "subdistrict_name_en": "Ratchaprasong",
+        "subdistrict_name_th": "ราชประสงค์",
+        "postal_code": 10330
+    }
+    ```
+
+#### 7. **Retrieve Provinces by Criterion**
+
+-   **Endpoint**: `GET /api/provinces/search`
+-   **Description**: Retrieves provinces based on search criteria.
+-   **Parameters** (query parameters):
+    -   `province_name_en`: The English name of the province.
+    -   `province_name_th`: The Thai name of the province.
+    -   `province_id`: The ID of the province.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "province_name_en": "Bangkok",
+        "province_name_th": "กรุงเทพมหานคร"
+      },
+      ...
+    ]
+    ```
+
+#### 8. **Retrieve Districts by Criterion**
+
+-   **Endpoint**: `GET /api/districts/search`
+-   **Description**: Retrieves districts based on search criteria.
+-   **Parameters** (query parameters):
+    -   `district_name_en`: The English name of the district.
+    -   `district_name_th`: The Thai name of the district.
+    -   `postal_code`: The postal code of the district.
+    -   `district_id`: The ID of the district.
+    -   `province_id`: The ID of the province.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "district_name_en": "Pathum Wan",
+        "district_name_th": "ปทุมวัน",
+        "postal_code": 10330
+      },
+      ...
+    ]
+    ```
+
+#### 9. **Retrieve Subdistricts by Criterion**
+
+-   **Endpoint**: `GET /api/subdistricts/search`
+-   **Description**: Retrieves subdistricts based on search criteria.
+-   **Parameters** (query parameters):
+    -   `subdistrict_name_en`: The English name of the subdistrict.
+    -   `subdistrict_name_th`: The Thai name of the subdistrict.
+    -   `postal_code`: The postal code of the subdistrict.
+    -   `subdistrict_id`: The ID of the subdistrict.
+    -   `district_id`: The ID of the district.
+    -   `province_id`: The ID of the province.
+-   **Response**:
+    ```json
+    [
+      {
+        "id": 1,
+        "province_id": 1,
+        "district_id": 1,
+        "subdistrict_id": 1,
+        "subdistrict_name_en": "Ratchaprasong",
+        "subdistrict_name_th": "ราชประสงค์",
+        "postal_code": 10330
+      },
+      ...
+    ]
+    ```
+
+## 🎨 Design Assets
+
+We provide a collection of design assets for the GeoThai brand, including logos, icons, and favicons. These resources are available for download in the `/press` directory:
+
+-   **Logos**: High-resolution logos for various use cases.
+-   **Icons**: Icons for web and mobile applications.
+-   **Favicons**: Favicons for browser tabs and bookmarks.
+
+Explore the assets [here](https://geothai.vercel.app/press).
+
+## 🤝 Contributing
+
+We welcome contributions to improve our website and API. Please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get involved.
+
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
+
+## 🙋‍♂️ Contact
+
+For any questions, support, or feedback, please reach out to us at [pyyupsk@proton.me](mailto:pyyupsk@proton.me).
+
+Thank you for visiting the GeoThai website! 🌟
