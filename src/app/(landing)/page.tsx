@@ -13,12 +13,12 @@ import Link from 'next/link'
 
 export default function Page() {
     return (
-        <main className="relative py-8 overflow-x-hidden">
+        <main className="relative py-12 overflow-x-hidden">
             {/* Hero */}
             <section className="container">
                 <BackgroundBox />
                 <Container>
-                    <div className="flex flex-col items-center justify-center py-20 h-full">
+                    <div className="flex flex-col items-center justify-center py-20">
                         <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
                             <span>
                                 <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
@@ -32,11 +32,11 @@ export default function Page() {
                             </span>
                         </button>
 
-                        <div className="flex flex-col items-center mt-8 max-w-3xl w-11/12 md:w-full">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground text-transparent">
+                        <div className="flex flex-col items-center mt-8 max-w-3xl">
+                            <h1 className="heading1 text-center bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground text-transparent">
                                 Explore Thailand’s Geographic Data
                             </h1>
-                            <p className="text-base md:text-lg text-muted-foreground mt-6 text-center">
+                            <p className="text-base md:text-lg mt-6 text-center">
                                 Access Detailed and Accurate Geographic Data Through Our User-Friendly API and Explore
                                 Various Tools and Resources Tailored for Developers and Researchers.
                             </p>
@@ -83,27 +83,23 @@ export default function Page() {
                 <Container>
                     <div className="max-w-2xl mx-auto text-start md:text-center">
                         <SectionBadge title="The Process" />
-                        <h2 className="text-3xl lg:text-4xl font-semibold mt-6">
-                            Three Steps to Integrate GeoThai API into Your Application
-                        </h2>
-                        <p className="text-muted-foreground mt-6">
-                            Turn your vision into reality in just 3 simple steps
-                        </p>
+                        <h2 className="heading2 mt-6">Three Steps to Integrate GeoThai API into Your Application</h2>
+                        <p className="mt-6">Turn your vision into reality in just 3 simple steps</p>
                     </div>
                 </Container>
                 <Container>
                     <div className="flex flex-col items-center justify-center py-10 md:py-20 w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full divide-x-0 md:divide-x divide-y md:divide-y-0 divide-border first:border-l-2 lg:first:border-none first:border-gray-900">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full divide-x-0 md:divide-x divide-y md:divide-y-0 divide-border">
                             {steps.map((steps) => (
                                 <div
                                     key={steps.title}
                                     className="flex flex-col items-start px-4 md:px-6 lg:px-8 lg:py-6 py-4"
                                 >
                                     <div className="flex items-center justify-center">
-                                        <steps.icon className="w-8 h-8" />
+                                        <steps.icon className="size-8" />
                                     </div>
-                                    <h3 className="text-lg font-semibold mt-4">{steps.title}</h3>
-                                    <p className="text-muted-foreground mt-2 text-start lg:text-start">{steps.desc}</p>
+                                    <h3 className="heading3 mt-4">{steps.title}</h3>
+                                    <p className="mt-2">{steps.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -118,10 +114,8 @@ export default function Page() {
                 <Container>
                     <div className="max-w-2xl mx-auto text-start md:text-center">
                         <SectionBadge title="Features" />
-                        <h2 className="text-3xl lg:text-4xl font-semibold mt-6">
-                            Discover the powerful capabilities of GeoThai API
-                        </h2>
-                        <p className="text-muted-foreground mt-6">
+                        <h2 className="heading2 mt-6">Discover the powerful capabilities of GeoThai API</h2>
+                        <p className="mt-6">
                             GeoThai provides a suite of features to help you effortlessly integrate comprehensive
                             geographic data into your application.
                         </p>
@@ -136,12 +130,10 @@ export default function Page() {
                                     className="flex flex-col items-start lg:items-start px-0 md:px-0"
                                 >
                                     <div className="flex items-center justify-center">
-                                        <feature.icon className="w-8 h-8" />
+                                        <feature.icon className="size-8" />
                                     </div>
-                                    <h3 className="text-lg font-semibold mt-4">{feature.title}</h3>
-                                    <p className="text-muted-foreground mt-2 text-start lg:text-start">
-                                        {feature.desc}
-                                    </p>
+                                    <h3 className="heading3 mt-4">{feature.title}</h3>
+                                    <p className="mt-2">{feature.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -154,17 +146,17 @@ export default function Page() {
                 <Container>
                     <LampContainer>
                         <div className="flex flex-col items-center justify-center relative w-full text-center">
-                            <h2 className="text-4xl lg:text-5xl xl:text-6xl lg:!leading-snug font-semibold mt-8">
+                            <h2 className="heading1 mt-8">
                                 From Idea to Integration <br /> Faster Than Ever
                             </h2>
-                            <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
+                            <p className="mt-6 max-w-2xl mx-auto">
                                 Seamlessly integrate comprehensive geographic data into your applications with
                                 GeoThai&apos;s easy-to-use API and detailed documentation.
                             </p>
                             <Button variant="white" className="mt-6" asChild>
                                 <Link href="/api" target="_blank" rel="noopener noreferrer">
                                     Get started for free
-                                    <ArrowRight className="w-4 h-4 ml-2" />
+                                    <ArrowRight className="size-4 ml-2" />
                                 </Link>
                             </Button>
                         </div>

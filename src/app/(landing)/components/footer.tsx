@@ -7,14 +7,14 @@ export function Footer() {
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 container">
                     <div className="mb-8 md:mb-0">
-                        <h3 className="text-xl font-semibold mb-4">GeoThai</h3>
-                        <p className="text-muted-foreground text-sm">
+                        <h3 className="heading3 mb-4">GeoThai</h3>
+                        <p className="text-sm">
                             Your go-to source for detailed geographic data on Thailand, including provinces, districts,
                             and subdistricts.
                         </p>
                     </div>
                     <div className="mb-8 md:mb-0">
-                        <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+                        <h4 className="heading4 mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             {navigation.map((item) => (
                                 <li key={item.name}>
@@ -29,8 +29,8 @@ export function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
-                        <p className="text-muted-foreground mb-2 text-sm">
+                        <h4 className="heading4 mb-4">Contact Us</h4>
+                        <p className="mb-2 text-sm">
                             Email:{' '}
                             <Link
                                 href="mailto:pyyupsk@proton.me"
@@ -41,7 +41,7 @@ export function Footer() {
                                 pyyupsk@proton.me
                             </Link>
                         </p>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-sm">
                             GitHub:{' '}
                             <Link
                                 href="https://github.com/GeoThai"
@@ -55,7 +55,7 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="mt-12 py-8 border-t text-center">
-                    <p className="text-muted-foreground">© {new Date().getFullYear()} GeoThai. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} GeoThai. All rights reserved.</p>
                 </div>
             </div>
         </footer>
