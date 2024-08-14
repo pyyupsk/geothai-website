@@ -2,11 +2,22 @@ import { Container } from '@/components/container'
 import { buttonVariants } from '@/components/ui/button'
 import { Spotlight } from '@/components/ui/spotlight'
 import { press } from '@/constants/press'
+import { commonMetaData } from '@/lib/meta'
 import { cn } from '@/lib/utils'
 import { DownloadIcon } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+export async function generateMetadata(): Promise<Metadata> {
+    const metaData: Metadata = commonMetaData({
+        title: 'GeoThai Press Kit | Logos, Icons, and Brand Assets',
+        description:
+            'Download GeoThai’s official logos, icons, and brand guidelines. Ensure consistent and accurate branding in your publications with our media assets.'
+    })
+
+    return metaData
+}
 export default function Page() {
     return (
         <main className="py-12 min-h-screen">

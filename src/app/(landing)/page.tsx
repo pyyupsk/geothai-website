@@ -7,9 +7,21 @@ import { LampContainer } from '@/components/ui/lamp'
 import { SectionBadge } from '@/components/ui/section-badge'
 import { features } from '@/constants/features'
 import { steps } from '@/constants/steps'
+import { commonMetaData } from '@/lib/meta'
 import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+
+export async function generateMetadata(): Promise<Metadata> {
+    const metaData: Metadata = commonMetaData({
+        title: 'GeoThai API | Comprehensive Geographic Data for Thailand',
+        description:
+            'Discover GeoThai API for easy access to detailed geographic data of Thailand. Seamlessly integrate and scale with our robust RESTful API and developer tools.'
+    })
+
+    return metaData
+}
 
 export default function Page() {
     return (
