@@ -46,7 +46,9 @@ export function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h4 className="heading4 mb-4">Contact Us</h4>
+                    <h4 id="contact" className="heading4 mb-4">
+                        Contact Us
+                    </h4>
                     <ul className="space-y-2">
                         {socials.map((item) => (
                             <li key={item.name}>
@@ -67,7 +69,7 @@ export function Footer() {
                     <div className="flex space-x-4 mt-4">
                         {socials.map((item) => (
                             <Link key={item.name} href={item.link} target="_blank" rel="noopener noreferrer">
-                                <item.icon className="size-5 text-muted-foreground" />
+                                <item.icon className="size-5 text-muted-foreground hover:text-foreground transition-colors" />
                             </Link>
                         ))}
                     </div>

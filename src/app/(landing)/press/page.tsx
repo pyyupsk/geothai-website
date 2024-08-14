@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 export default function Page() {
     return (
-        <main className="py-12 min-h-screen">
+        <main className="py-12">
             <Spotlight className="-z-10" />
             <section className="container py-20">
                 <Container>
