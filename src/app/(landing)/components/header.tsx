@@ -16,9 +16,11 @@ export function Header() {
                     <nav className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <ul className="flex items-center justify-center gap-8">
                             {navigation.map((item) => (
-                                <Link key={item.name} href={item.href} className="hover:text-foreground/80 text-sm">
-                                    {item.name}
-                                </Link>
+                                <li key={item.name}>
+                                    <Link href={item.href} className="hover:text-foreground/80 text-sm">
+                                        {item.name}
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </nav>
