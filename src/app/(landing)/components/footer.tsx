@@ -32,20 +32,24 @@ export function Footer() {
                     </div>
                     <div>
                         <h4 className="heading4 mb-4">Contact Us</h4>
-                        {socials.map((item) => (
-                            <p key={item.name} className="text-sm">
-                                {item.name}:{' '}
-                                <Link
-                                    href={item.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-foreground transition-colors"
-                                >
-                                    {item.label}
-                                </Link>
-                            </p>
-                        ))}
-                        <div className="flex space-x-2 mt-4">
+                        <ul className="space-y-2">
+                            {socials.map((item) => (
+                                <li key={item.name}>
+                                    <p className="text-sm">
+                                        {item.name}:{' '}
+                                        <Link
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-foreground transition-colors"
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="flex space-x-4 mt-4">
                             {socials.map((item) => (
                                 <Link key={item.name} href={item.link} target="_blank" rel="noopener noreferrer">
                                     <item.icon className="size-5 text-muted-foreground" />
