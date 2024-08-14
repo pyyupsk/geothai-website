@@ -206,6 +206,12 @@ https://geothai.vercel.app
     ]
     ```
 
+### Explore the API
+
+You can explore and test the GeoThai API using Postman. Click the button below to get started:
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/35081948-b6a67405-7d06-4999-991e-60429e31104c?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D35081948-b6a67405-7d06-4999-991e-60429e31104c%26entityType%3Dcollection%26workspaceId%3D399c0f28-dca0-44d0-a0a9-7a8d855bbdf2)
+
 ## 🎨 Design Assets
 
 We provide a collection of design assets for the GeoThai brand, including logos, icons, and favicons. These resources are available for download in the `/press` directory:
@@ -215,6 +221,12 @@ We provide a collection of design assets for the GeoThai brand, including logos,
 -   **Favicons**: Favicons for browser tabs and bookmarks.
 
 Explore the assets [here](https://geothai.vercel.app/press).
+
+## 📚 Documentation
+
+### RESTful API Documentation
+
+For comprehensive details on how to use the GeoThai RESTful API, visit our [API Documentation](https://geothai.vercel.app/api).
 
 ## 🤝 Contributing
 

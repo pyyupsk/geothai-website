@@ -19,6 +19,9 @@ importers:
             framer-motion:
                 specifier: ^11.3.24
                 version: 11.3.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+            geothai:
+                specifier: ^0.0.2
+                version: 0.0.2
             lucide-react:
                 specifier: ^0.427.0
                 version: 0.427.0(react@18.3.1)
@@ -2190,6 +2193,12 @@ packages:
                 integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==
             }
         engines: { node: '>=6.9.0' }
+
+    geothai@0.0.2:
+        resolution:
+            {
+                integrity: sha512-36FmCeXMN32UNPEbG3k7tUp5Dv+mAESQjZCb7VkpR5vM0Tya5nssf0HVqden6m3KqWStnqrg9jpFzkFCVpf5Kg==
+            }
 
     get-caller-file@2.0.5:
         resolution:
@@ -5882,6 +5891,8 @@ snapshots:
     functions-have-names@1.2.3: {}
 
     gensync@1.0.0-beta.2: {}
+
+    geothai@0.0.2: {}
 
     get-caller-file@2.0.5: {}
 
