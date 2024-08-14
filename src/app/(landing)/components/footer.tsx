@@ -1,4 +1,6 @@
+import { legals } from '@/constants/legals'
 import { navigation } from '@/constants/navigation'
+import { socials } from '@/constants/socials'
 import Link from 'next/link'
 
 export function Footer() {
@@ -30,32 +32,43 @@ export function Footer() {
                     </div>
                     <div>
                         <h4 className="heading4 mb-4">Contact Us</h4>
-                        <p className="mb-2 text-sm">
-                            Email:{' '}
-                            <Link
-                                href="mailto:pyyupsk@proton.me"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-foreground transition-colors"
-                            >
-                                pyyupsk@proton.me
-                            </Link>
-                        </p>
-                        <p className="text-sm">
-                            GitHub:{' '}
-                            <Link
-                                href="https://github.com/GeoThai"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-foreground transition-colors"
-                            >
-                                @GeoThai
-                            </Link>
-                        </p>
+                        {socials.map((item) => (
+                            <p key={item.name} className="text-sm">
+                                {item.name}:{' '}
+                                <Link
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-foreground transition-colors"
+                                >
+                                    {item.label}
+                                </Link>
+                            </p>
+                        ))}
+                        <div className="flex space-x-2 mt-4">
+                            {socials.map((item) => (
+                                <Link key={item.name} href={item.link} target="_blank" rel="noopener noreferrer">
+                                    <item.icon className="size-5 text-muted-foreground" />
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className="mt-12 py-8 border-t text-center">
-                    <p>© {new Date().getFullYear()} GeoThai. All rights reserved.</p>
+                <div className="mt-12 py-8 border-t">
+                    <div className="container flex justify-between">
+                        <p className="text-sm">© {new Date().getFullYear()} GeoThai. All rights reserved.</p>
+                        <div className="flex space-x-4">
+                            {legals.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
