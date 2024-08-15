@@ -20,8 +20,8 @@ importers:
                 specifier: ^11.3.24
                 version: 11.3.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
             geothai:
-                specifier: ^0.1.0
-                version: 0.1.0
+                specifier: ^0.2.0
+                version: 0.2.0
             lucide-react:
                 specifier: ^0.427.0
                 version: 0.427.0(react@18.3.1)
@@ -2194,10 +2194,10 @@ packages:
             }
         engines: { node: '>=6.9.0' }
 
-    geothai@0.1.0:
+    geothai@0.2.0:
         resolution:
             {
-                integrity: sha512-U/uRMD0CQUq63h96sKgmWsSOwTbr2RNd/ofkohx+wlo3kSATQYhtR0cDqQ+ACpF/4Q2J4URiCIONhl7aSMl4Ag==
+                integrity: sha512-x3ZiVoLK+RznD/3oM85/YzailZQ9q1cIPi9Lf9B2Nxm8UAhWUU2TvQLMGiqZFwfgXEbcIaLMy71XkIvRFLTqjQ==
             }
 
     get-caller-file@2.0.5:
@@ -5892,7 +5892,7 @@ snapshots:
 
     gensync@1.0.0-beta.2: {}
 
-    geothai@0.1.0: {}
+    geothai@0.2.0: {}
 
     get-caller-file@2.0.5: {}
 

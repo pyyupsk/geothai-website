@@ -2,8 +2,8 @@ import { getDistrictsByCriterion, getProvincesByCriterion } from 'geothai'
 import { NextRequest, NextResponse } from 'next/server'
 
 /**
- * @description API endpoint to retrieve districts and zip codes by province name and district name
- * @route       GET /api/zip-code-lookup
+ * @description API endpoint to retrieve districts and postal codes by province name and district name
+ * @route       GET /api/reverse-lookup
  * @param {NextRequest} request - The Next.js request object
  * @returns     {NextResponse} - The JSON response with an array of district objects
  */
