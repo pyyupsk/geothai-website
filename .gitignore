@@ -27,6 +27,7 @@ yarn-error.log*
 git-status.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel

@@ -1,6 +1,7 @@
+import { ContactForm } from '@/components/contact-form'
 import { Container } from '@/components/container'
 import { Logo } from '@/components/logo'
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { navigation } from '@/constants/navigation'
 import Link from 'next/link'
 
@@ -27,14 +28,21 @@ export function Header() {
                             ))}
                         </ul>
                     </nav>
-                    <Link
-                        href="/api"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={buttonVariants({ size: 'sm' })}
-                    >
-                        Get Started
-                    </Link>
+                    <div className="flex items-center gap-2">
+                        <ContactForm>
+                            <Button variant="outline" size="sm">
+                                Contact Us
+                            </Button>
+                        </ContactForm>
+                        <Link
+                            href="/api/swagger"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={buttonVariants({ size: 'sm' })}
+                        >
+                            Get Started
+                        </Link>
+                    </div>
                 </div>
             </Container>
         </header>

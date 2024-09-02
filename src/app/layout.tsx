@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { Toaster } from '@/components/ui/toaster'
 import { Kanit as FontSans } from 'next/font/google'
 
 const fontSans = FontSans({
@@ -10,7 +11,10 @@ const fontSans = FontSans({
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className="dark" suppressHydrationWarning>
-            <body className={fontSans.className}>{children}</body>
+            <body className={fontSans.className}>
+                {children}
+                <Toaster />
+            </body>
         </html>
     )
 }
