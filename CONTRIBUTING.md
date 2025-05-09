@@ -108,6 +108,6 @@ By contributing to this project, you agree to abide by our [Code of Conduct](COD
 If you have any questions or need assistance, feel free to reach out:
 
 -   Open an issue on our [GitHub Issues page](https://github.com/GeoThai/website/issues).
--   Contact us via email at [contact@fasu.dev](mailto:contact@fasu.dev).
+-   Contact us via email at [geothai@fasu.dev](mailto:geothai@fasu.dev).
 
 Thank you for contributing to the **GeoThai** website! Your efforts make a difference in helping us provide better geographic data and resources to the community. 🌟

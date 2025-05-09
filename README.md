@@ -42,6 +42,6 @@ This project is licensed under the [MIT License](LICENSE). See the LICENSE file 
 
 ## 🙋‍♂️ Contact
 
-For any questions, support, or feedback, please reach out to us at [contact@fasu.dev](mailto:contact@fasu.dev).
+For any questions, support, or feedback, please reach out to us at [geothai@fasu.dev](mailto:geothai@fasu.dev).
 
 Thank you for visiting the GeoThai website! 🌟
