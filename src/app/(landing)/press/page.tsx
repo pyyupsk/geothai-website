@@ -11,9 +11,9 @@ import Link from 'next/link'
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaData: Metadata = commonMetaData({
-    title: 'GeoThai Press Kit | Logos, Icons, and Brand Assets',
+    title: 'GeoThai Press Kit | Logos and Brand Assets',
     description:
-      'Download GeoThai’s official logos, icons, and brand guidelines. Ensure consistent and accurate branding in your publications with our media assets.'
+      'Download GeoThai’s official logos and brand guidelines. Ensure consistent and accurate branding in your publications with our media assets.'
   })
 
   return metaData
@@ -34,14 +34,14 @@ export default function Page() {
             {press.map((item) => (
               <div
                 key={item.name}
-                className={cn(
-                  'shadow-md rounded border flex flex-col',
-                  item.dark ? 'bg-white' : 'bg-white/5'
-                )}
+                className="shadow-md rounded border flex flex-col"
+                style={{
+                  backgroundColor: item.backgroundColor
+                }}
               >
                 <div className={cn('aspect-video relative', !item.full && 'p-6')}>
                   <Image
-                    src={item.image}
+                    src={`${item.baseImage}.${item.formats[0]}`}
                     alt={item.name}
                     width={500}
                     height={500}
@@ -52,16 +52,16 @@ export default function Page() {
                   <h3 className="heading3">{item.name}</h3>
                   <p className="mt-2">{item.desc}</p>
                   <div className="flex items-center gap-2 mt-4">
-                    {item.buttons.map((button) => (
+                    {item.formats.map((format) => (
                       <Link
-                        key={button.name}
-                        href={button.url}
+                        key={format}
+                        href={`${item.baseImage}.${format}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download
                         className={buttonVariants({ variant: 'white', size: 'sm' })}
                       >
-                        {button.name}
+                        {format}
                         <DownloadIcon className="size-4" />
                       </Link>
                     ))}
