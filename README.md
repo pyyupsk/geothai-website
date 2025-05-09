@@ -4,17 +4,17 @@ Welcome to the **GeoThai Website**! 🌏✨ This site serves as the central hub 
 
 ## 🚀 Overview
 
--   **RESTful API**: Retrieve detailed geographic data of provinces, districts, and subdistricts in Thailand.
--   **Design Assets**: Access logos, icons, favicons, and other design resources.
--   **Documentation**: Explore API documentation and guides for additional packages.
+- **RESTful API**: Retrieve detailed geographic data of provinces, districts, and subdistricts in Thailand.
+- **Design Assets**: Access logos, icons, favicons, and other design resources.
+- **Documentation**: Explore API documentation and guides for additional packages.
 
 ## 🌐 RESTful API
 
 The GeoThai RESTful API provides endpoints to access comprehensive geographic data:
 
--   **Provinces**: Retrieve information about Thai provinces.
--   **Districts**: Get details on districts within each province.
--   **Subdistricts**: Access data on subdistricts within each district.
+- **Provinces**: Retrieve information about Thai provinces.
+- **Districts**: Get details on districts within each province.
+- **Subdistricts**: Access data on subdistricts within each district.
 
 ### Explore the API
 
@@ -26,9 +26,9 @@ You can explore and test the GeoThai API using Swagger. Click the button below t
 
 We provide a collection of design assets for the GeoThai brand, including logos, icons, and favicons. These resources are available for download in the `/press` directory:
 
--   **Logos**: High-resolution logos for various use cases.
--   **Icons**: Icons for web and mobile applications.
--   **Favicons**: Favicons for browser tabs and bookmarks.
+- **Logos**: High-resolution logos for various use cases.
+- **Icons**: Icons for web and mobile applications.
+- **Favicons**: Favicons for browser tabs and bookmarks.
 
 Explore the assets [here](https://geothai.fasu.dev/press).
 

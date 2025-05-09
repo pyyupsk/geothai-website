@@ -8,10 +8,10 @@ Thank you for your interest in contributing to the **GeoThai** website! 🌏✨ 
 
 If you find a bug or have a suggestion for improvement, please open an issue on our [GitHub Issues page](https://github.com/GeoThai/website/issues). When reporting an issue, be sure to include:
 
--   A clear and descriptive title.
--   A detailed description of the problem or suggestion.
--   Steps to reproduce the issue (if applicable).
--   Any relevant screenshots or logs.
+- A clear and descriptive title.
+- A detailed description of the problem or suggestion.
+- Steps to reproduce the issue (if applicable).
+- Any relevant screenshots or logs.
 
 ### 2. Fork the Repository
 
@@ -42,9 +42,9 @@ git checkout -b my-feature-branch
 
 Whether you're fixing a bug, adding a feature, or improving documentation:
 
--   Follow the project's code style and conventions.
--   Ensure your changes are well-documented.
--   Include relevant tests for new features or bug fixes.
+- Follow the project's code style and conventions.
+- Ensure your changes are well-documented.
+- Include relevant tests for new features or bug fixes.
 
 ### 6. Run Tests
 
@@ -58,12 +58,12 @@ npm test
 
 Write clear and concise commit messages. Use the following format:
 
--   `fix: [description of the fix]`
--   `feat: [description of the new feature]`
--   `docs: [description of documentation changes]`
--   `style: [description of code style changes]`
--   `refactor: [description of code refactoring]`
--   `test: [description of test-related changes]`
+- `fix: [description of the fix]`
+- `feat: [description of the new feature]`
+- `docs: [description of documentation changes]`
+- `style: [description of code style changes]`
+- `refactor: [description of code refactoring]`
+- `test: [description of test-related changes]`
 
 Example:
 
@@ -83,9 +83,9 @@ git push origin my-feature-branch
 
 Go to the [GeoThai Website repository](https://github.com/GeoThai/website) and open a pull request (PR). Make sure to:
 
--   Provide a clear title and description of your changes.
--   Link to any relevant issues.
--   Describe any tests or steps to reproduce the changes.
+- Provide a clear title and description of your changes.
+- Link to any relevant issues.
+- Describe any tests or steps to reproduce the changes.
 
 ### 10. Review Process
 
@@ -95,9 +95,9 @@ Your pull request will be reviewed by maintainers. Please be patient, and respon
 
 If you're contributing to documentation:
 
--   Ensure that your changes are clear, concise, and easy to understand.
--   Update relevant sections of the documentation (e.g., README.md, API docs).
--   Use proper formatting for markdown files.
+- Ensure that your changes are clear, concise, and easy to understand.
+- Update relevant sections of the documentation (e.g., README.md, API docs).
+- Use proper formatting for markdown files.
 
 ## 🧑‍💻 Code of Conduct
 
@@ -107,7 +107,7 @@ By contributing to this project, you agree to abide by our [Code of Conduct](COD
 
 If you have any questions or need assistance, feel free to reach out:
 
--   Open an issue on our [GitHub Issues page](https://github.com/GeoThai/website/issues).
--   Contact us via email at [geothai@fasu.dev](mailto:geothai@fasu.dev).
+- Open an issue on our [GitHub Issues page](https://github.com/GeoThai/website/issues).
+- Contact us via email at [geothai@fasu.dev](mailto:geothai@fasu.dev).
 
 Thank you for contributing to the **GeoThai** website! Your efforts make a difference in helping us provide better geographic data and resources to the community. 🌟
