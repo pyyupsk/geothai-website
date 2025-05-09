@@ -2,14 +2,15 @@
     "name": "website",
     "version": "0.1.0",
     "private": true,
+    "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
     "scripts": {
         "build": "next build",
         "dev": "next --turbo",
-        "format": "prettier --check .",
-        "format:fix": "prettier --write --list-different .",
+        "format": "prettier --write --list-different . --cache",
         "knip": "knip",
         "knip:fix": "knip --fix",
-        "lint": "eslint .",
+        "lint": "next lint",
+        "lint:fix": "next lint --fix",
         "prepare": "husky",
         "start": "next start"
     },
