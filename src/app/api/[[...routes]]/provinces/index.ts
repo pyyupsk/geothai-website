@@ -1,6 +1,6 @@
 import { pagination } from '@/util/pagination'
 import { Elysia, t } from 'elysia'
-import { getAllProvinces, getProvinceById, Province } from 'geothai'
+import { getAllProvinces, getProvinceByCode, Province, ProvinceIndex } from 'geothai'
 
 export const provincesRouter = new Elysia({ prefix: '/provinces' })
   .get(
@@ -19,10 +19,10 @@ export const provincesRouter = new Elysia({ prefix: '/provinces' })
     }
   )
   .get(
-    '/:id',
+    '/:code',
     ({ params }) => {
-      const { id } = params
-      const province = getProvinceById(id)
+      const { code } = params
+      const province = getProvinceByCode(code as ProvinceIndex)
 
       if (!province) {
         return { message: 'Province not found' }
@@ -32,7 +32,7 @@ export const provincesRouter = new Elysia({ prefix: '/provinces' })
     },
     {
       params: t.Object({
-        id: t.Number()
+        code: t.String()
       })
     }
   )

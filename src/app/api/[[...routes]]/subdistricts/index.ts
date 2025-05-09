@@ -2,22 +2,23 @@ import { pagination } from '@/util/pagination'
 import { Elysia, t } from 'elysia'
 import {
   getAllSubdistricts,
-  getSubdistrictById,
+  getSubdistrictByCode,
   getSubdistrictsByCriterion,
-  Subdistrict
+  Subdistrict,
+  SubdistrictIndex
 } from 'geothai'
 
 export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
   .get(
     '/',
     ({ query, set }) => {
-      const { page, limit, province_id, district_id } = query
+      const { page, limit, province_code, district_code } = query
 
       let data
-      if (district_id !== undefined) {
-        data = getSubdistrictsByCriterion({ district_id })
-      } else if (province_id !== undefined) {
-        data = getSubdistrictsByCriterion({ province_id })
+      if (district_code !== undefined) {
+        data = getSubdistrictsByCriterion({ district_code })
+      } else if (province_code !== undefined) {
+        data = getSubdistrictsByCriterion({ province_code })
       } else {
         data = getAllSubdistricts()
       }
@@ -28,16 +29,16 @@ export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
       query: t.Object({
         page: t.Optional(t.Number()),
         limit: t.Optional(t.Number()),
-        province_id: t.Optional(t.Number()),
-        district_id: t.Optional(t.Number())
+        province_code: t.Optional(t.Number()),
+        district_code: t.Optional(t.Number())
       })
     }
   )
   .get(
-    '/:id',
+    '/:code',
     ({ params }) => {
-      const { id } = params
-      const subdistrict = getSubdistrictById(id)
+      const { code } = params
+      const subdistrict = getSubdistrictByCode(code as SubdistrictIndex)
 
       if (!subdistrict) {
         return { message: 'Subdistrict not found' }
@@ -47,7 +48,7 @@ export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
     },
     {
       params: t.Object({
-        id: t.Number()
+        code: t.String()
       })
     }
   )

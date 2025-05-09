@@ -1,10 +1,15 @@
 import { Elysia, t } from 'elysia'
-import { getDistrictsByCriterion, getProvincesByCriterion } from 'geothai'
+import {
+  getDistrictsByCriterion,
+  getProvincesByCriterion,
+  getSubdistrictsByCriterion,
+  Subdistrict
+} from 'geothai'
 
 export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get(
   '/',
   ({ query, set }) => {
-    const { province_name_th, district_name_th } = query
+    const { province_name_th, district_name_th, subdistrict_name_th } = query
 
     if (!province_name_th) {
       set.status = 400
@@ -12,7 +17,7 @@ export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get
     }
 
     const provinces = getProvincesByCriterion({
-      province_name_th
+      name_th: province_name_th
     })
 
     if (provinces.length === 0) {
@@ -25,25 +30,55 @@ export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get
     let districts
     if (district_name_th) {
       districts = getDistrictsByCriterion({
-        province_id: province.province_id,
-        district_name_th
+        province_code: province.code,
+        name_th: district_name_th
       })
     } else {
       districts = getDistrictsByCriterion({
-        province_id: province.province_id
+        province_code: province.code
       })
     }
 
+    let subdistricts: Subdistrict[] = []
+
+    if (subdistrict_name_th) {
+      for (const district of districts) {
+        subdistricts = subdistricts.concat(
+          getSubdistrictsByCriterion({
+            district_code: district.code,
+            name_th: subdistrict_name_th
+          })
+        )
+      }
+    } else {
+      for (const district of districts) {
+        subdistricts = subdistricts.concat(
+          getSubdistrictsByCriterion({
+            district_code: district.code
+          })
+        )
+      }
+    }
+
+    const formattedSubdistricts = subdistricts.map((subdistrict) => ({
+      code: subdistrict.code,
+      name_th: subdistrict.name_th,
+      name_en: subdistrict.name_en,
+      postal_code: subdistrict.postal_code
+    }))
+
     const formattedDistricts = districts.map((district) => ({
-      district_name_th: district.district_name_th,
-      district_name_en: district.district_name_en,
-      zip_codes: district.postal_code
+      code: district.code,
+      name_th: district.name_th,
+      name_en: district.name_en,
+      subdistricts: formattedSubdistricts
     }))
 
     return {
       province: {
-        province_name_th: province.province_name_th,
-        province_name_en: province.province_name_en
+        code: province.code,
+        name_th: province.name_th,
+        name_en: province.name_en
       },
       districts: formattedDistricts
     }
@@ -51,7 +86,8 @@ export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get
   {
     query: t.Object({
       province_name_th: t.String(),
-      district_name_th: t.Optional(t.String())
+      district_name_th: t.Optional(t.String()),
+      subdistrict_name_th: t.Optional(t.String())
     })
   }
 )

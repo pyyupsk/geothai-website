@@ -1,15 +1,21 @@
 import { pagination } from '@/util/pagination'
 import { Elysia, t } from 'elysia'
-import { District, getAllDistricts, getDistrictById, getDistrictsByCriterion } from 'geothai'
+import {
+  District,
+  DistrictIndex,
+  getAllDistricts,
+  getDistrictByCode,
+  getDistrictsByCriterion
+} from 'geothai'
 
 export const districtsRouter = new Elysia({ prefix: '/districts' })
   .get(
     '/',
     ({ query, set }) => {
-      const { page, limit, province_id } = query
+      const { page, limit, province_code } = query
       let data
-      if (province_id !== undefined) {
-        data = getDistrictsByCriterion({ province_id })
+      if (province_code !== undefined) {
+        data = getDistrictsByCriterion({ province_code })
       } else {
         data = getAllDistricts()
       }
@@ -20,15 +26,15 @@ export const districtsRouter = new Elysia({ prefix: '/districts' })
       query: t.Object({
         page: t.Optional(t.Number()),
         limit: t.Optional(t.Number()),
-        province_id: t.Optional(t.Number())
+        province_code: t.Optional(t.Number())
       })
     }
   )
   .get(
-    '/:id',
+    '/:code',
     ({ params }) => {
-      const { id } = params
-      const district = getDistrictById(id)
+      const { code } = params
+      const district = getDistrictByCode(code as DistrictIndex)
 
       if (!district) {
         return { message: 'District not found' }
@@ -38,7 +44,7 @@ export const districtsRouter = new Elysia({ prefix: '/districts' })
     },
     {
       params: t.Object({
-        id: t.Number()
+        code: t.String()
       })
     }
   )

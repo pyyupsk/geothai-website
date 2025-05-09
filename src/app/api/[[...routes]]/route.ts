@@ -1,19 +1,23 @@
-import swagger from '@elysiajs/swagger'
+import swagger, { ElysiaSwaggerConfig } from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
+import { metadata } from 'geothai'
 import { districtsRouter } from './districts'
 import { postalCodeRouter } from './postal-code'
 import { provincesRouter } from './provinces'
 import { reverseLookupRouter } from './reverse-lookup'
 import { subdistrictsRouter } from './subdistricts'
 
-const swaggerConfig = {
+const swaggerConfig: ElysiaSwaggerConfig = {
   documentation: {
     info: {
       title: 'Geothai API',
       description: 'API documentation for Geothai',
-      version: '0.2.0'
-    }
-  }
+      version: metadata.version
+    },
+    openapi: metadata.version
+  },
+  theme: 'light',
+  autoDarkMode: false
 }
 
 const app = new Elysia({ prefix: '/api' })
