@@ -38,7 +38,7 @@ The following behaviors are considered unacceptable and will not be tolerated wi
 
 If you experience or witness any behavior that violates this Code of Conduct, please report it as soon as possible. Violations can be reported by:
 
--   **Email**: Contact us at [pyyupsk@proton.me](mailto:pyyupsk@proton.me) with details of the incident.
+-   **Email**: Contact us at [contact@fasu.dev](mailto:contact@fasu.dev) with details of the incident.
 -   **GitHub Issues**: Open an issue in the [GeoThai repository](https://github.com/GeoThai/website/issues) (if comfortable doing so), but please consider privacy and sensitivity.
 
 All reports will be reviewed and investigated promptly and confidentially. The GeoThai team is committed to protecting the privacy and safety of reporters.
@@ -59,6 +59,6 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ## Contact
 
-If you have any questions or need further clarification on this Code of Conduct, please reach out to us at [pyyupsk@proton.me](mailto:pyyupsk@proton.me).
+If you have any questions or need further clarification on this Code of Conduct, please reach out to us at [contact@fasu.dev](mailto:contact@fasu.dev).
 
 Thank you for helping us maintain a welcoming and respectful community at GeoThai. 🌟

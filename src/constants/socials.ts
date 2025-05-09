@@ -10,8 +10,8 @@ type Social = {
 export const socials: Social[] = [
     {
         name: 'Email',
-        label: 'pyyupsk@proton.me',
-        link: 'mailto:pyyupsk@proton.me',
+        label: 'contact@fasu.dev',
+        link: 'mailto:contact@fasu.dev',
         icon: MailIcon
     },
     {

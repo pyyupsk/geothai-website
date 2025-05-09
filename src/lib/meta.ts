@@ -11,7 +11,7 @@ export function commonMetaData({ title, description }: CommonMetaData) {
         title,
         description,
         authors: 'GeoThai',
-        metadataBase: new URL('https://geothai.vercel.app/'),
+        metadataBase: new URL('https://geothai.fasu.dev/'),
         openGraph: {
             title,
             description,
