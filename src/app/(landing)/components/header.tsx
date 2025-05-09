@@ -1,6 +1,5 @@
 import { ContactForm } from '@/components/contact-form'
 import { Container } from '@/components/container'
-import { Logo } from '@/components/logo'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { navigation } from '@/constants/navigation'
 import Link from 'next/link'
@@ -10,8 +9,7 @@ export function Header() {
         <header className="h-16 fixed w-full bg-background/40 backdrop-blur-md border-b z-50">
             <Container reverse>
                 <div className="flex items-center justify-between h-full container">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Logo className="size-8" />
+                    <Link href="/">
                         <h1 className="heading3">GeoThai</h1>
                     </Link>
                     <nav className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
