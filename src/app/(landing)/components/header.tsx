@@ -18,6 +18,8 @@ export function Header() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
+                    target={item.target}
+                    {...(item.target === '_blank' && { rel: 'noopener noreferrer' })}
                     className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {item.name}
