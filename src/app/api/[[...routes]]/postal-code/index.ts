@@ -1,3 +1,4 @@
+import { Tags } from '@/app/api/types'
 import { Elysia, t } from 'elysia'
 import {
   DistrictIndex,
@@ -48,6 +49,9 @@ export const postalCodeRouter = new Elysia({ prefix: '/postal-code' }).get(
   {
     params: t.Object({
       code: t.Number()
-    })
+    }),
+    detail: {
+      tags: [Tags.POSTAL_CODE]
+    }
   }
 )

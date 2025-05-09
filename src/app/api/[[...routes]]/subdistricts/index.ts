@@ -1,3 +1,4 @@
+import { Tags } from '@/app/api/types'
 import { pagination } from '@/util/pagination'
 import { Elysia, t } from 'elysia'
 import {
@@ -10,7 +11,7 @@ import {
 
 export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
   .get(
-    '/',
+    '',
     ({ query, set }) => {
       const { page, limit, province_code, district_code } = query
 
@@ -31,7 +32,10 @@ export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
         limit: t.Optional(t.Number()),
         province_code: t.Optional(t.Number()),
         district_code: t.Optional(t.Number())
-      })
+      }),
+      detail: {
+        tags: [Tags.SUBDISTRICTS]
+      }
     }
   )
   .get(
@@ -49,6 +53,9 @@ export const subdistrictsRouter = new Elysia({ prefix: '/subdistricts' })
     {
       params: t.Object({
         code: t.String()
-      })
+      }),
+      detail: {
+        tags: [Tags.SUBDISTRICTS]
+      }
     }
   )

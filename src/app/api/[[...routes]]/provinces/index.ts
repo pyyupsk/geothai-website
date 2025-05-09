@@ -1,10 +1,11 @@
+import { Tags } from '@/app/api/types'
 import { pagination } from '@/util/pagination'
 import { Elysia, t } from 'elysia'
 import { getAllProvinces, getProvinceByCode, Province, ProvinceIndex } from 'geothai'
 
 export const provincesRouter = new Elysia({ prefix: '/provinces' })
   .get(
-    '/',
+    '',
     ({ query, set }) => {
       const { page, limit } = query
       const data = getAllProvinces()
@@ -15,7 +16,10 @@ export const provincesRouter = new Elysia({ prefix: '/provinces' })
       query: t.Object({
         page: t.Optional(t.Number()),
         limit: t.Optional(t.Number())
-      })
+      }),
+      detail: {
+        tags: [Tags.PROVINCES]
+      }
     }
   )
   .get(
@@ -33,6 +37,9 @@ export const provincesRouter = new Elysia({ prefix: '/provinces' })
     {
       params: t.Object({
         code: t.String()
-      })
+      }),
+      detail: {
+        tags: [Tags.PROVINCES]
+      }
     }
   )

@@ -1,3 +1,4 @@
+import { Tags } from '@/app/api/types'
 import swagger, { ElysiaSwaggerConfig } from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
 import { metadata } from 'geothai'
@@ -14,8 +15,16 @@ const swaggerConfig: ElysiaSwaggerConfig = {
       description: 'API documentation for Geothai',
       version: metadata.version
     },
-    openapi: metadata.version
+    openapi: metadata.version,
+    tags: [
+      { name: Tags.PROVINCES, description: 'Provinces endpoints' },
+      { name: Tags.DISTRICTS, description: 'Districts endpoints' },
+      { name: Tags.SUBDISTRICTS, description: 'Subdistricts endpoints' },
+      { name: Tags.POSTAL_CODE, description: 'Postal Code endpoints' },
+      { name: Tags.REVERSE_LOOKUP, description: 'Reverse Lookup endpoints' }
+    ]
   },
+  exclude: ['/api/swagger', '/api/swagger/json'],
   theme: 'light',
   autoDarkMode: false
 }

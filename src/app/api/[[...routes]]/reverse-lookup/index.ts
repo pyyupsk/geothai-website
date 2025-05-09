@@ -1,3 +1,4 @@
+import { Tags } from '@/app/api/types'
 import { Elysia, t } from 'elysia'
 import {
   getDistrictsByCriterion,
@@ -7,7 +8,7 @@ import {
 } from 'geothai'
 
 export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get(
-  '/',
+  '',
   ({ query, set }) => {
     const { province_name_th, district_name_th, subdistrict_name_th } = query
 
@@ -88,6 +89,9 @@ export const reverseLookupRouter = new Elysia({ prefix: '/reverse-lookup' }).get
       province_name_th: t.String(),
       district_name_th: t.Optional(t.String()),
       subdistrict_name_th: t.Optional(t.String())
-    })
+    }),
+    detail: {
+      tags: [Tags.REVERSE_LOOKUP]
+    }
   }
 )
